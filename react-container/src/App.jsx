@@ -5,8 +5,8 @@ function App() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    console.log(import.meta.env.VITE_API_URL + "/items");
-    fetch(`${import.meta.env.VITE_API_URL + "/items"}`)
+    console.log(import.meta.env.VITE_API_URL + "items");
+    fetch(`${import.meta.env.VITE_API_URL + "items"}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

@@ -8,7 +8,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "http://localhost:5174",
-      "https://fullstack-frontend-production.up.railway.app/",
+      "https://fullstack-frontend-production.up.railway.app",
     ],
     // methods: ["GET", "POST", "PUT", "DELETE"], // allowed HTTP methods
     // allowedHeaders: ["Content-Type", "Authorization"],

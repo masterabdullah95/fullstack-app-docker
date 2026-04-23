@@ -10,8 +10,8 @@ app.use(
       "http://localhost:5174",
       "https://fullstack-frontend-production.up.railway.app/",
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"], // allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"],
+    // methods: ["GET", "POST", "PUT", "DELETE"], // allowed HTTP methods
+    // allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // allow cookies / auth headers
   }),
 );

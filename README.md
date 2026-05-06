@@ -211,7 +211,7 @@ const apiUrl = import.meta.env.VITE_API_URL;
 
 **In Express (runtime):**
 
-````javascript
+```javascript
 const mongoUri = process.env.MONGO_URI;
 const port = process.env.EXPRESS_PORT || 5000;
 ```
@@ -254,7 +254,7 @@ docker-compose down
 
 # To also remove volumes (clears MongoDB data)
 docker-compose down -v
-````
+```
 
 ---
 

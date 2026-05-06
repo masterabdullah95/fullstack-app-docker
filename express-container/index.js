@@ -48,7 +48,7 @@ app.post("/items", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ msg: "hello from express container" });
+  res.json({ msg: "Hi from express server" });
 });
 
 const port = process.env.PORT || 4000;

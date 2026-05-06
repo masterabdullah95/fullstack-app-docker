@@ -4,6 +4,8 @@ services:
     container_name: express-container
     ports:
       - "3000:3000"
+    env_file:
+      - ./express-container/.env
     environment:
       - MONGO_URI=mongodb://mongo:27017/mydocker
     networks:
@@ -12,10 +14,12 @@ services:
       - mongo
     restart: unless-stopped
   client: 
-    build: ./react-container
+    build: 
+      context: ./react-container
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL}   # Use at build time -> docker-compose up --build, picks variables from .env file
     container_name: react-container
-    args:
-      - VITE_API_URL=${VITE_API_URL}   # ✅ reads from .env file
     ports:
       - "5173:5173"
     networks:
@@ -26,10 +30,15 @@ services:
 
   mongo:
     image: mongo:7
+    container_name: mongo-container 
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db   # data persists even if container restarts
+    networks:
+      - fullstack-net
+    restart: unless-stopped
+
 networks:
   fullstack-net:
     driver: bridge
